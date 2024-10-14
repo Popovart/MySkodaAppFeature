@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">MySkodaAppFeature</string>
+    <string name="trip">Trip</string>
+    <string name="safe_zone_driver">Safe Zone Driver</string>
+    <string name="diagnosed_and_confirmed">Diagnosed and Confirmed</string>
+    <string name="night_ranger">Night Ranger</string>
+    <string name="traveler">Traveler</string>
+    <string name="silent_hero">Silent Hero</string>
+    <string name="remote_control_master">Remote Control Master</string>
+    <string name="time_behind_the_wheel">Time Behind the Wheel</string>
+    <string name="eco_driver">Eco Driver</string>
+    <string name="parking_master">Parking Master</string>
+    <string name="green_circle">Green Circle</string>
+    <string name="ticket_free_driver">Ticket-Free Driver</string>
+    <string name="on_time">On Time</string>
+
 </resources>

@@ -68,5 +68,7 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation("vwg.skoda.maulcompose:core:7.2.1")
     implementation("vwg.skoda.maulcompose:legacy:7.2.1")
+    implementation("androidx.compose.material:material-icons-extended")
+    implementation("com.ehsanmsz:msz-progress-indicator:0.8.0")
 
 }
