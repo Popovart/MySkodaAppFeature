@@ -99,28 +99,33 @@ fun SootheBottomNavigation(
             Icons.Default.SupervisorAccount
         )
 
-        items.forEachIndexed { index, item ->
-            NavigationBarItem(
-                selected = selectedItem == index,
-                onClick = { selectedItem = index },
-                colors = NavigationBarItemDefaults.colors(
-                    selectedIconColor = MaulTheme.colors.brandPrimary,
-                    selectedTextColor = MaulTheme.colors.brandPrimary,
-                    indicatorColor = MaulTheme.colors.backgroundPrimary
-                ),
-                icon = {
-                    Icon(
-                        imageVector = icons[index],
-                        contentDescription = null,
-                    )
-                },
-                label = {
-                    Text(
-                        text = item,
-                        style = MaulTheme.typography.disclaimer
-                    )
-                },
-            )
+        Row (
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            items.forEachIndexed { index, item ->
+                NavigationBarItem(
+                    selected = selectedItem == index,
+                    onClick = { selectedItem = index },
+                    colors = NavigationBarItemDefaults.colors(
+                        selectedIconColor = MaulTheme.colors.brandPrimary,
+                        selectedTextColor = MaulTheme.colors.brandPrimary,
+                        indicatorColor = MaulTheme.colors.backgroundPrimary
+                    ),
+                    icon = {
+                        Icon(
+                            imageVector = icons[index],
+                            contentDescription = null,
+                        )
+                    },
+                    label = {
+                        Text(
+                            text = item,
+                            maxLines = 1,
+                            style = MaulTheme.typography.disclaimer
+                        )
+                    },
+                )
+            }
         }
     }
 }
@@ -153,7 +158,7 @@ fun MapItem(
                     .shadow(elevation = MaulTheme.elevations.elevationXL, RoundedCornerShape(10.dp))
             )
             Text(
-                text = "Trip",
+                text = stringResource(text),
                 color = Color.White,
                 modifier = Modifier
                     .align(Alignment.TopStart)
@@ -195,7 +200,8 @@ fun AchievementsItem(
         Surface (
             shadowElevation = 10.dp,
             shape = CircleShape,
-            modifier = Modifier.size(80.dp)
+            modifier = Modifier.size(80.dp),
+            color = MaulTheme.colors.backgroundSecondary
         ) {
             Image(
                 painter = painterResource(drawable),
@@ -211,6 +217,7 @@ fun AchievementsItem(
             text = stringResource(text),
             style = MaulTheme.typography.disclaimerBold,
             textAlign = TextAlign.Center,
+            maxLines = 2,
             modifier = Modifier
                 .paddingFromBaseline(top = 24.dp, bottom = 8.dp)
         )
@@ -320,6 +327,7 @@ fun Feed(modifier: Modifier = Modifier) {
                         Icon(
                             imageVector = Icons.Default.DirectionsCar,
                             modifier = modifier.size(25.dp),
+                            tint = MaulTheme.colors.brandPrimary,
                             contentDescription = null
                         )
                         Text(
@@ -332,6 +340,7 @@ fun Feed(modifier: Modifier = Modifier) {
             }
             Icon(
                 imageVector = Icons.Default.MoreHoriz,
+                tint = MaulTheme.colors.brandPrimary,
                 contentDescription = null
             )
         }
@@ -445,7 +454,8 @@ fun FeatureScreen() {
         },
         bottomBar = {
             SootheBottomNavigation()
-        }
+        },
+        containerColor = MaulTheme.colors.backgroundPrimary
     ) { innerPadding ->
         Column (
             modifier = Modifier
