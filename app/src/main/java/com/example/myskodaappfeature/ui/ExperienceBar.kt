@@ -42,7 +42,7 @@ fun ExperienceBar(progress: Float, modifier: Modifier = Modifier) {
             modifier = Modifier
                 .padding(start = 10.dp),
             textAlign = TextAlign.Center,
-            color = MaulTheme.colors.textPrimary,
+            color = MaulTheme.colors.backgroundPrimary,
             style = MaulTheme.typography.disclaimer,
 
         )

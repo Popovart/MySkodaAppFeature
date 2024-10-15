@@ -52,7 +52,7 @@ fun FeedItem(
                 modifier = Modifier.weight(1f)
             ) {
                 Image(
-                    painter = painterResource(R.drawable.vafanaso),
+                    painter = painterResource(feedInfo.drawable),
                     contentDescription = null,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
@@ -118,7 +118,7 @@ fun FeedItem(
                 Spacer(modifier = Modifier.width(MaulTheme.dimensions.spaceM))
                 Column {
                     Text(
-                        text = "Evg. speed",
+                        text = "Avg. speed",
                         style = MaulTheme.typography.disclaimer,
                         modifier = Modifier.paddingFromBaseline(bottom = MaulTheme.dimensions.spaceXXS)
                     )

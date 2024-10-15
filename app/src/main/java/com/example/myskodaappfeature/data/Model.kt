@@ -11,6 +11,7 @@ data class DrawablePair (
 
 data class FeedInfo (
     val name: String,
+    @DrawableRes val drawable: Int,
     val date: String,
     val header: String,
     val distance: Double,
@@ -36,12 +37,18 @@ val achievementsData = listOf(
 
 val tripsData = listOf(
     R.drawable.map1 to R.string.trip,
-    R.drawable.map1 to R.string.trip,
+    R.drawable.map2 to R.string.trip,
+).map { DrawablePair(it.first, it.second) }
+
+val tripsData2 = listOf(
+    R.drawable.map3 to R.string.trip,
+    R.drawable.map4 to R.string.trip,
 ).map { DrawablePair(it.first, it.second) }
 
 val feedData = listOf(
     FeedInfo(
-        name = "Afanaso Valerii",
+        name = "Pugachova Alla",
+        drawable = R.drawable.pugachova,
         date = "Yesterday at 9:59 Prague",
         header = "My holiday trip with family",
         distance = 21.71,
@@ -49,11 +56,41 @@ val feedData = listOf(
         maps = tripsData
     ),
     FeedInfo(
-        name = "Fafanaso Valerii",
-        date = "Yesterday at 9:59 Prague",
-        header = "My holiday trip with family",
-        distance = 21.71,
-        speed = 70.4,
-        maps = tripsData
+        name = "Nico Robin",
+        drawable = R.drawable.daughter,
+        date = "Two days ago at 14.15 Prague",
+        header = "Trip to Usti nad Labem",
+        distance = 15.71,
+        speed = 60.4,
+        maps = tripsData2
     )
+)
+
+
+data class Member(
+    val name: String,
+    @DrawableRes val drawable: Int,
+    val dist: Double,
+    val time: Double
+)
+
+val memberData = listOf(
+    Member(
+        name = "Me",
+        drawable = R.drawable.vafanaso,
+        dist = 854.5,
+        time = 65.4
+    ),
+    Member(
+        name = "Wife",
+        drawable = R.drawable.pugachova,
+        dist = 400.1,
+        time = 30.4
+    ),
+    Member(
+        name = "Daughter",
+        drawable = R.drawable.daughter,
+        dist = 150.5,
+        time = 10.4
+    ),
 )
