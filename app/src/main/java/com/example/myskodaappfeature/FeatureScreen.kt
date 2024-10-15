@@ -56,6 +56,7 @@ import com.example.myskodaappfeature.ui.AchievementsRow
 import com.example.myskodaappfeature.ui.ExperienceBar
 import com.example.myskodaappfeature.ui.FeedColumn
 import com.example.myskodaappfeature.ui.FeedItem
+import com.example.myskodaappfeature.ui.FriendsScreen
 import vwg.skoda.maulcompose.lib.foundation.MaulTheme
 
 enum class FeatureScreen(@StringRes val title: Int)
@@ -153,34 +154,6 @@ fun FeedScreen(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun FriendsScreen(modifier: Modifier = Modifier) {
-    Column (
-        modifier = modifier
-            .fillMaxSize()
-            .verticalScroll(rememberScrollState())
-            .padding(top = 20.dp)
-    ) {
-        FeatureSection(
-            title = "Your progress:",
-            modifier = Modifier.padding(horizontal = 20.dp)
-        ) {
-            ExperienceBar(
-                progress = .3f,
-                modifier = Modifier.padding(horizontal = 20.dp)
-            )
-        }
-        Spacer(modifier = Modifier.height(MaulTheme.dimensions.spaceM))
-        FeatureSection(
-            title = "Last achievements:",
-            modifier = Modifier.padding(horizontal = 20.dp)
-        ) {
-            AchievementsRow()
-        }
-        Spacer(modifier = Modifier.height(MaulTheme.dimensions.spaceM))
-    }
-}
-
-@Composable
 fun FeatureAppBar(
     navController: NavHostController,
     modifier: Modifier = Modifier
@@ -188,7 +161,7 @@ fun FeatureAppBar(
     val tabs = listOf(FeatureScreen.Feed.name, FeatureScreen.Friends.name)
     var selectedTabIndex by remember { mutableIntStateOf(0) }
 
-    Column {
+    Column (modifier) {
         Text(
             text = "Social",
             style = MaulTheme.typography.header2,
